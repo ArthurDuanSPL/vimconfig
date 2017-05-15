@@ -31,6 +31,8 @@ filetype plugin indent on    " required
 set splitbelow
 set splitright
 
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 " split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -44,23 +46,14 @@ set foldlevel=99
 " Enable folding with the spacebar
 nnoremap <space> za
 
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
-
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set textwidth=79
+set fileformat=unix
 
 let g:SimpylFold_docstring_preview=1
 
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 set encoding=utf-8
 
@@ -88,3 +81,8 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 set nu
 
 set clipboard=unnamed
+
+" Enable pydiction
+filetype plugin on
+let g:pydiction_location = '~/.vim/tools/pydiction/complete-dict'
+
